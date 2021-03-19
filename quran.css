@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 50px auto 70px;
+}
+
+.header .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px auto 0;
+    font-family: 'Lateef', cursive;
+    font-weight: 400;
+    font-size: 3.5rem;
+}
+
+.header .translate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Lateef', cursive;
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.content {
+    padding: 10px 50px 30px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+.arabic {
+    font-weight: 400;
+    width: 100%;
+    text-align: right;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 0;
+    font-family: 'Lateef', cursive;
+    font-size: 2.4rem;
+    color: #101010;
+}
+
+.translation {
+    font-weight: 300;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto 30px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.buttons #next {
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgba(65, 110, 63, 0.5);
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(65, 110, 63, 0.5);
+    transition: 0.3s;
+    color: #333;
+}
+
+.buttons #prev {
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    margin-right: 30px;
+    background-color: rgba(65, 110, 63, 0.5);
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #333;
+    border: 1px solid rgba(65, 110, 63, 0.5);
+    transition: 0.3s;
+}
+
+.buttons #next:hover {
+    background-color: rgba(65, 110, 63, 0.3);
+    box-shadow: 0 0 2px 2px rgba(65, 110, 63, 0.5);
+    border: 1px solid rgba(65, 110, 63, 0.3);
+    transition: 0.3s;
+}
+
+.buttons #prev:hover {
+    background-color: rgba(65, 110, 63, 0.3);
+    box-shadow: 0 0 2px 2px rgba(65, 110, 63, 0.5);
+    border: 1px solid rgba(65, 110, 63, 0.3);
+    transition: 0.3s;
+}
+
+span {
+    margin: 0 25px;
+    font-size: 1.5rem;
+}

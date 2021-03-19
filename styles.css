@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    height: 50px;
+    background-color: rgba(65, 110, 63, 0.5);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-family: 'Lateef', cursive;
+}
+
+ul {
+    display: flex;
+    align-items: center;
+}
+
+ul li {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0 10px;
+    height: 100%;
+}
+
+ul li:last-child {
+    margin-right: 5px;
+}
+
+ul li:first-child {
+    margin-left: 0;
+}
+
+ul li .home,
+ul li .mywebsite {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+ul li .home:hover,
+ul li .mywebsite:hover {
+    color: #555;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    width: 200px;
+    margin: 50px 20px 10px;
+    display: grid;
+    place-content: center;
+    grid-template-areas: 
+    'name name surahNumbers'
+    'nameTranslate nameTranslate surahNumbers';
+    grid-template-rows: 1fr;
+    border: 2px solid rgba(65, 110, 63, 0.5);
+    border-radius: 10px;
+}
+
+.cards .name {
+    grid-area: name;
+    display: grid;
+    place-content: center;
+    width: 150px;
+    height: 40px;
+    text-align: left;
+    padding: 5px 10px;
+    padding-bottom: 0;
+}
+
+.cards .nameTranslate {
+    grid-area: nameTranslate;
+    display: grid;
+    place-content: center;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    padding: 5px 10px;
+    padding-top: 0;
+    font-size: 0.9rem;
+}
+
+.cards .surahNumbers {
+    grid-area: surahNumbers;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    width: 50px;
+    height: 80px;
+    border-left: 1px solid rgba(65, 110, 63, 0.5);
+}
+
+

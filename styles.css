@@ -149,7 +149,7 @@ ul li .mywebsite:hover {
     font-size: 3.5rem;
 }
 
-.header .translate {
+.header .translateAr {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -157,8 +157,18 @@ ul li .mywebsite:hover {
     margin: 0 auto;
     font-family: 'Lateef', cursive;
     font-weight: 400;
-    font-size: 2rem;
-    z-index: -1;
+    font-size: 2.7rem;
+}
+
+.header .translateId {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 300;
+    font-size: 1.5rem;
 }
 
 .content {

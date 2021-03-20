@@ -46,10 +46,12 @@ async function getSurah(number) {
 
 function displayTitleSurah(surah) {
 	const title = document.querySelector('.title');
-	const translate = document.querySelector('.translate');
+	const translateAr = document.querySelector('.translateAr');
+	const translateId = document.querySelector('.translateId');
 
 	title.textContent = surah.name_translations.ar;
-	translate.textContent = `" ${surah.name_translations.id}"`;
+	translateAr.textContent = `${surah.name}`;
+	translateId.textContent = `" ${surah.name_translations.id}"`;
 }
 
 function displaySurah(surah) {

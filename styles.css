@@ -5,18 +5,27 @@
     font-family: 'Source Sans Pro', sans-serif;
 }
 
+/* all surah styles */
+
+/* navbar style */
+
 .navigation {
+    position: sticky;
+    top: 0;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 30px;
-    height: 50px;
-    background-color: rgba(65, 110, 63, 0.5);
+    height: 60px;
+    background-color: #9FB69E;
+    z-index: 100;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
     font-family: 'Lateef', cursive;
+    background-color: #9FB69E;
 }
 
 ul {
@@ -84,6 +93,16 @@ ul li .mywebsite:hover {
     padding-bottom: 0;
 }
 
+.cards .name .nameData {
+    display: inline-block;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    padding-top: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
 .cards .nameTranslate {
     grid-area: nameTranslate;
     display: grid;
@@ -103,7 +122,166 @@ ul li .mywebsite:hover {
     text-align: center;
     width: 50px;
     height: 80px;
+    color: #333;
+    font-weight: bold;
     border-left: 1px solid rgba(65, 110, 63, 0.5);
 }
 
+/* display surah styles */
+
+.header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 50px auto 70px;
+}
+
+.header .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px auto 0;
+    font-family: 'Lateef', cursive;
+    font-weight: 400;
+    font-size: 3.5rem;
+}
+
+.header .translate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    font-family: 'Lateef', cursive;
+    font-weight: 400;
+    font-size: 2rem;
+    z-index: -1;
+}
+
+.content {
+    padding: 10px 50px 30px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+}
+
+.arabic {
+    font-weight: 400;
+    width: 100%;
+    text-align: right;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    padding: 0;
+    font-family: 'Lateef', cursive;
+    font-size: 2.4rem;
+    color: #101010;
+}
+
+.translation {
+    font-weight: 300;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 0;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto 30px;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.buttons #next {
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: rgba(65, 110, 63, 0.5);
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(65, 110, 63, 0.5);
+    transition: 0.3s;
+    color: #333;
+}
+
+.buttons #prev {
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    margin-right: 30px;
+    background-color: rgba(65, 110, 63, 0.5);
+    font-size: 0.9rem;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    color: #333;
+    border: 1px solid rgba(65, 110, 63, 0.5);
+    transition: 0.3s;
+}
+
+.buttons #next:hover {
+    background-color: rgba(65, 110, 63, 0.3);
+    box-shadow: 0 0 2px 2px rgba(65, 110, 63, 0.5);
+    border: 1px solid rgba(65, 110, 63, 0.3);
+    transition: 0.3s;
+}
+
+.buttons #prev:hover {
+    background-color: rgba(65, 110, 63, 0.3);
+    box-shadow: 0 0 2px 2px rgba(65, 110, 63, 0.5);
+    border: 1px solid rgba(65, 110, 63, 0.3);
+    transition: 0.3s;
+}
+
+span {
+    margin: 0 25px;
+    font-size: 1.2rem;
+}
+
+
+/* mobile styles*/
+@media screen and (max-width:500px) {
+    .cards {
+        width: 130px;
+        margin: 50px 20px 10px;
+        grid-template-areas:
+        'surahNumbers surahNumbers' 
+        'name name'
+        'nameTranslate nameTranslate';
+    }
+
+    .cards .name {
+        width: 130px;
+        height: 45px;
+        padding: 20px 10px 0;
+    }
+
+    .cards .name .nameData {
+        width: 130px;
+        height: 45px;
+    }
+
+    .cards .nameTranslate {
+        width: 130px;
+        height: 60px;
+    }
+
+    .cards .surahNumbers {
+        width: 130px;
+        height: 40px;
+        background-color: rgba(65, 110, 63, 0.5);
+        border-radius: 10px 10px 0 0;
+        border-bottom: 1px solid rgba(65, 110, 63, 0.5);
+    }
+}
 

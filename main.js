@@ -1,11 +1,12 @@
 //home display functions
 async function getAllsurah() {
+	
+	hideSecondary();
+
 	const allSurah = await fetch(`https://raw.githubusercontent.com/penggguna/QuranJSON/master/quran.json`, {mode: 'cors'})	
 		.then(response => response.json())
 		.then(response => response)
 		.catch(err => console.log(err))
-	
-	hideSecondary();
 	
 	return addCards(allSurah)
 }
@@ -28,13 +29,11 @@ function addCards(allSurah){
 
 //display surah functions
 async function getSurah(number) {
-	console.log(number)
+	
 	const surah = await fetch(`https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${number}.json`, {mode: 'cors'})	
 		.then(response => response.json())
 		.then(response => response)
 		.catch(err => console.log(err))
-	
-	console.log(surah)
 
 	hideMain()
 	appearSecondary()
@@ -51,7 +50,7 @@ function displayTitleSurah(surah) {
 
 	title.textContent = surah.name_translations.ar;
 	translateAr.textContent = `${surah.name}`;
-	translateId.textContent = `" ${surah.name_translations.id}"`;
+	translateId.textContent = `" ${surah.name_translations.id}" / ${surah.number_of_ayah} ayat`;
 }
 
 function displaySurah(surah) {
@@ -83,7 +82,7 @@ function displaySurah(surah) {
 		p.textContent = translation;
 
 		h4.append(span)
-		span.textContent = `( ${ayat} )`;
+		span.textContent = `${ayat}`;
 	}
 }
 
@@ -127,6 +126,16 @@ function appearSecondary(){
 	});
 }
 
+function loading(){
+	const loading = document.querySelector('.loading');
+	
+	loading.classList.toggle('overlay');
+
+	setTimeout(() => {
+		loading.classList.toggle('overlay');
+	}, 1600);
+}
+
 const next = document.querySelector('#next');
 const prev = document.querySelector('#prev');
 const body = document.body;
@@ -140,7 +149,8 @@ document.addEventListener('click', e => {
 		let id = parseInt(numbers) + 1;
 		
 		number = id;
-		clearElements()
+		clearElements();
+		loading();
 		getSurah(number)
 	}
 })
@@ -148,9 +158,9 @@ document.addEventListener('click', e => {
 next.addEventListener('click', () => {
 	if (number < 114) {
 		clearElements();
+		loading();
 		getSurah(number+1);	
 		number += 1;
-		console.log(number)
 	} else {
 		number = 114;	
 	}	
@@ -159,9 +169,9 @@ next.addEventListener('click', () => {
 prev.addEventListener('click', () => {
 	if (number > 1) {
 		clearElements();
+		loading();
 		getSurah(number-1);	
 		number -= 1;
-		console.log(number)
 	} else {
 		number = 1;	
 	}

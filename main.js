@@ -30,7 +30,12 @@ function addCards(allSurah){
 //display surah functions
 async function getSurah(number) {
 	
-	const surah = await fetch(`https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${number}.json`, {mode: 'cors'})	
+	const surah = await fetch(`https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${number}.json`)	
+		.then(response => response.json())
+		.then(response => response)
+		.catch(err => console.log(err))
+
+	const surahArabic = await fetch(`http://api.alquran.cloud/v1/surah/${number}`)	
 		.then(response => response.json())
 		.then(response => response)
 		.catch(err => console.log(err))
@@ -40,7 +45,7 @@ async function getSurah(number) {
 
 	displayTitleSurah(surah)
 
-	return displaySurah(surah);
+	return displaySurah(surah, surahArabic);
 }
 
 function displayTitleSurah(surah) {
@@ -53,9 +58,9 @@ function displayTitleSurah(surah) {
 	translateId.textContent = `" ${surah.name_translations.id}" / ${surah.number_of_ayah} ayat`;
 }
 
-function displaySurah(surah) {
+function displaySurah(surah, surahArabic) {
 	for (var i = 0; i < surah.verses.length; i++) {
-		const arabic = surah.verses[i].text;
+		const arabic = surahArabic.data.ayahs[i].text;
 		const ayat = surah.verses[i].number;
 		const translation = surah.verses[i].translation_id;
 

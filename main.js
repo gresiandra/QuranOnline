@@ -30,12 +30,12 @@ function addCards(allSurah){
 //display surah functions
 async function getSurah(number) {
 	
-	const surah = await fetch(`https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${number}.json`)	
+	const surah = await fetch(`https://raw.githubusercontent.com/penggguna/QuranJSON/master/surah/${number}.json`, {mode: 'cors'})	
 		.then(response => response.json())
 		.then(response => response)
 		.catch(err => console.log(err))
 
-	const surahArabic = await fetch(`http://api.alquran.cloud/v1/surah/${number}`)	
+	const surahArabic = await fetch(`http://api.alquran.cloud/v1/surah/${number}`, {mode: 'cors'})	
 		.then(response => response.json())
 		.then(response => response)
 		.catch(err => console.log(err))

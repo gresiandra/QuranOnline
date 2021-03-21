@@ -38,9 +38,14 @@
 }
 
 .logo {
-    font-size: 1.7rem;
-    font-family: 'Lateef', cursive;
     background-color: #C5D3C5;
+}
+
+.logo a{
+    font-size: 1.8rem;
+    font-family: 'Lateef', cursive;
+    text-decoration: none;
+    color: #101010;
 }
 
 ul {

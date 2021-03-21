@@ -133,7 +133,7 @@ function loading(){
 
 	setTimeout(() => {
 		loading.classList.toggle('overlay');
-	}, 1600);
+	}, 2000);
 }
 
 const next = document.querySelector('#next');

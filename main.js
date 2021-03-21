@@ -35,17 +35,17 @@ async function getSurah(number) {
 		.then(response => response)
 		.catch(err => console.log(err))
 
-	const surahArabic = await fetch(`http://api.alquran.cloud/v1/surah/${number}`, {mode: 'cors'})	
-		.then(response => response.json())
-		.then(response => response)
-		.catch(err => console.log(err))
+	// const surahArabic = await fetch(`http://api.alquran.cloud/v1/surah/${number}`, {mode: 'cors'})	
+	// 	.then(response => response.json())
+	// 	.then(response => response)
+	// 	.catch(err => console.log(err))
 
 	hideMain()
 	appearSecondary()
 
 	displayTitleSurah(surah)
 
-	return displaySurah(surah, surahArabic);
+	return displaySurah(surah);
 }
 
 function displayTitleSurah(surah) {
@@ -60,7 +60,7 @@ function displayTitleSurah(surah) {
 
 function displaySurah(surah, surahArabic) {
 	for (var i = 0; i < surah.verses.length; i++) {
-		const arabic = surahArabic.data.ayahs[i].text;
+		const arabic = surah.verses[i].text;
 		const ayat = surah.verses[i].number;
 		const translation = surah.verses[i].translation_id;
 

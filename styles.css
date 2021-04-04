@@ -286,8 +286,32 @@ span {
     color: rgba(65, 110, 63, 0.7);
 }
 
-h1.coming {
-    padding: 30px;
+h1.judul {
+    font-weight: 700;
+    font-family: 'Lateef', cursive;
+    font-size: 2.5rem;
+    line-height: 2rem;
+    margin-bottom: 5px;
+}
+
+h3.deskripsi {
+    margin-bottom: 50px;
+    font-weight: 300;
+    text-align: center;
+}
+
+.deskripsi a {
+    text-decoration: none;
+    color: #101010;
+}
+
+.abouts {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    margin: 70px 30px;
+    padding: 10px 20px;
 }
 
 

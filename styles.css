@@ -70,14 +70,14 @@ ul li:first-child {
 }
 
 ul li .home,
-ul li .mywebsite {
+ul li .about {
     text-decoration: none;
     color: #101010;
     font-weight: bold;
 }
 
-ul li .home:hover,
-ul li .mywebsite:hover {
+ul li .home:hover, 
+ul li .about:hover {
     color: #555;
 }
 
@@ -286,6 +286,10 @@ span {
     color: rgba(65, 110, 63, 0.7);
 }
 
+h1.coming {
+    padding: 30px;
+}
+
 
 /* mobile styles*/
 @media screen and (max-width:500px) {
@@ -294,8 +298,8 @@ span {
         padding: 0 20px;
     }
 
-    ul li .mywebsite{
-        display: none;
+    ul li .about{
+       margin-left: 10px;
     }
 
     ul li {
